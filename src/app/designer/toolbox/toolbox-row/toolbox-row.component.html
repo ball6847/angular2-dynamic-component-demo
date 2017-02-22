@@ -1,1 +1,16 @@
-Toolbox Row
+<div id="toolbox" >
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3>Row #{{ index+1 }}</h3>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"
+          [checked]="row.hasContainer"
+          (change)="row.hasContainer = !row.hasContainer">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Row has container</span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

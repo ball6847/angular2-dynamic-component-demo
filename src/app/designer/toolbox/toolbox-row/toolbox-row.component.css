@@ -1,0 +1,9 @@
+#toolbox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 12em;
+  background: black;
+  color: white;
+  padding-top: 2em;
+}

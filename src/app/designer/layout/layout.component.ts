@@ -1,34 +1,37 @@
 import { Component } from '@angular/core';
-import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from './shared/layout.model'
+import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from './shared/layout.model';
+import { LayoutService, LayoutObservable } from './shared/layout.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'layout',
   styleUrls: ['./layout.component.css'],
   templateUrl: './layout.component.html'
 })
-export class LayoutComponent implements Layout {
-  rows: LayoutRow[] = [];
+export class LayoutComponent {
+  layout: LayoutRow[];
+  index: number;
+
+  constructor(
+    private layoutService: LayoutService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params
+      .subscribe(param => {
+        this.index = parseInt(param['id']);
+      });
+  }
 
   ngOnInit() {
-    this.rows = [
-      new LayoutRow([
-        new LayoutColumn(new LayoutWidget('Hello1Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello2Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello3Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello4Component', {})),
-      ]),
-      new LayoutRow([
-        new LayoutColumn(new LayoutWidget('Hello1Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello2Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello3Component', {})),
-        new LayoutColumn(new LayoutWidget('Hello4Component', {})),
-      ]),
-    ];
+    this.layout = this.layoutService.getLayout();
   }
 
   addRow() {
-    this.rows.push(new LayoutRow([
-      new LayoutColumn(new LayoutWidget('Hello1Component', {}))
-    ]));
+    const index = this.layoutService.addRow();
+    this.selectRow(index);
+  }
+
+  selectRow(index: number) {
+    this.router.navigate(['/row', index]);
   }
 }

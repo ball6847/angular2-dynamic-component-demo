@@ -1,5 +1,15 @@
-<div *ngFor="let row of rows" [ngClass]="{'container': row.hasContainer}">
-  <layout-row class="row" [columns]="row.columns"></layout-row>
+<div
+  *ngFor="let row of layout; let i = index"
+  (click)="selectRow(i)"
+  [ngClass]="{
+    'container': row.hasContainer,
+    'container-fluid': !row.hasContainer
+  }">
+  <layout-row
+    class="row"
+    [columns]="row.columns"
+    [class.active]="row.active"
+    ></layout-row>
 </div>
 <div class="container">
   <div class="row" id="row-add-row">

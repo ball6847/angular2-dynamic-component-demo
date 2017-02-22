@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Layout Components
@@ -31,6 +32,7 @@ const dynamicComponents = [
   ],
   imports: [
     BrowserModule,
+    RouterModule.forChild([])
   ],
   entryComponents: [
     ...dynamicComponents

@@ -3,6 +3,8 @@ export class Layout {
 }
 
 export class LayoutRow {
+  public active: boolean = false;
+
   constructor(public columns?: LayoutColumn[], public hasContainer: boolean = true) {
   }
 }
