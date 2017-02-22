@@ -8,7 +8,7 @@ export class LayoutRow {
 }
 
 export class LayoutColumn {
-  classes: string[] = ['col-md-3'];
+  classes: string[] = ['col'];
 
   constructor(public widget?: LayoutWidget) {
   }

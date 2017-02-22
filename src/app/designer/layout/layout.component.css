@@ -3,4 +3,12 @@
   border: 2px dashed #0275d8;
   padding: 1em;
   margin-top: 1em;
+  align-items: center;
+    justify-content: center;
+}
+layout-row.row {
+  border: 2px dashed #FFF;
+}
+layout-row.row:hover {
+  border: 2px dashed #0275d8;
 }

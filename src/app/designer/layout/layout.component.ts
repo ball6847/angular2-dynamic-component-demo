@@ -28,10 +28,7 @@ export class LayoutComponent implements Layout {
 
   addRow() {
     this.rows.push(new LayoutRow([
-      new LayoutColumn(new LayoutWidget('Hello1Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello2Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello3Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello4Component', {})),
+      new LayoutColumn(new LayoutWidget('Hello1Component', {}))
     ]));
   }
 }
