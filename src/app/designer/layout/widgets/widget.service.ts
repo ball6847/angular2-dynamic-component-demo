@@ -1,11 +1,12 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+
 import {
   Hello1Component,
   Hello2Component,
   Hello3Component,
   Hello4Component,
   UnknownComponent
-} from './components';
+} from './widget.component';
 
 
 @Injectable()
@@ -20,12 +21,4 @@ export class WidgetFactory {
   getComponent(name: string) {
     return this.mappings[name] || UnknownComponent;
   }
-}
-
-export {
-Hello1Component,
-Hello2Component,
-Hello3Component,
-Hello4Component,
-UnknownComponent
 }

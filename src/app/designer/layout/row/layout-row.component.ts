@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../designer.interface'
+import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../layout.model'
 
 @Component({
   selector: 'layout-row',

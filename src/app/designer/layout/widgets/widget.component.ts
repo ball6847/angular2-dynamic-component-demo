@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LayoutWidget } from '../designer.interface'
+import { LayoutWidget } from '../layout.model'
 
 // ------------------------------------------------
 

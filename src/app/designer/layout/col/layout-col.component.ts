@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import { WidgetFactory } from '../widgets';
-import { LayoutWidget } from '../designer.interface';
+import { LayoutWidget } from '../layout.model';
 
 @Component({
   selector: 'layout-col',

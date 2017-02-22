@@ -1,41 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+
 import { DesignerComponent } from './designer.component';
-import { LayoutComponent } from './layout/layout.component';
-import { LayoutRowComponent } from './layout-row/layout-row.component';
-import { LayoutColComponent } from './layout-col/layout-col.component';
-import {
-  Hello1Component,
-  Hello2Component,
-  Hello3Component,
-  Hello4Component,
-  UnknownComponent,
-  WidgetFactory
-} from './widgets'
+
+// Layout Components
+import { LayoutModule } from './layout/layout.module';
+
+// Toolbox Components
+import { ToolboxRowComponent } from './toolbox/toolbox-row/toolbox-row.component';
+
+const appRoutes: Routes = [
+  { path: 'row-:row', component: ToolboxRowComponent },
+  // { path: '**', component: PageNotFoundComponent }
+];
+
 
 @NgModule({
   declarations: [
     DesignerComponent,
-    LayoutComponent,
-    LayoutRowComponent,
-    LayoutColComponent,
-    Hello1Component,
-    Hello2Component,
-    Hello3Component,
-    Hello4Component,
-    UnknownComponent
+    ToolboxRowComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    LayoutModule
   ],
-  entryComponents: [
-    Hello1Component,
-    Hello2Component,
-    Hello3Component,
-    Hello4Component,
-    UnknownComponent
-  ],
-  providers: [WidgetFactory],
   bootstrap: [DesignerComponent]
 })
 export class DesignerModule { }
