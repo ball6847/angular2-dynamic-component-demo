@@ -3,7 +3,7 @@ import {
   ViewContainerRef, ComponentFactoryResolver, ComponentRef
 } from '@angular/core';
 
-import { WidgetFactory } from '../widgets';
+import { WidgetFactory } from '../layout-widget';
 import { LayoutWidget } from '../layout.model';
 
 @Component({
