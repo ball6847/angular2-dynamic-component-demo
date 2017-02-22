@@ -3,9 +3,7 @@ import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../designer.inter
 
 @Component({
   selector: 'layout-row',
-  template: `
-    <layout-column [ngClass]="column.classes" *ngFor="let column of columns" [widget]="column.widget"></layout-column>
-  `
+  templateUrl: './layout-row.component.html'
 })
 export class LayoutRowComponent {
   @Input()

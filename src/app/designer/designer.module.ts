@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DesignerComponent } from './designer.component';
-import { LayoutComponent } from './components/layout.component';
-import { LayoutRowComponent } from './components/layout-row.component';
-import { LayoutColumnComponent } from './components/layout-column.component';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutRowComponent } from './layout-row/layout-row.component';
+import { LayoutColComponent } from './layout-col/layout-col.component';
 import {
   Hello1Component,
   Hello2Component,
@@ -18,7 +18,7 @@ import {
     DesignerComponent,
     LayoutComponent,
     LayoutRowComponent,
-    LayoutColumnComponent,
+    LayoutColComponent,
     Hello1Component,
     Hello2Component,
     Hello3Component,

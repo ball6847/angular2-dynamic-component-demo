@@ -7,23 +7,11 @@ import { WidgetFactory } from '../widgets';
 import { LayoutWidget } from '../designer.interface';
 
 @Component({
-  selector: 'layout-column',
-  styles: [`
-    .widget {
-      min-height: 90px;
-      background: rgba(0, 0, 0, 0.3);
-      margin-bottom: 1px;
-      text-align: center;
-      padding-top: 1em;
-    }
-  `],
-  template: `
-    <div class="widget">
-      <div #container></div>
-    </div>
-  `
+  selector: 'layout-col',
+  styleUrls: ['./layout-col.component.css'],
+  templateUrl: './layout-col.component.html'
 })
-export class LayoutColumnComponent implements OnInit, OnDestroy {
+export class LayoutColComponent implements OnInit, OnDestroy {
   @Input()
   widget: LayoutWidget;
 
