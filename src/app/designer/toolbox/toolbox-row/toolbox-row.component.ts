@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './toolbox-row.component.html'
 })
 export class ToolboxRowComponent {
-
+  ngOnInit() {
+    console.log('init');
+  }
 }

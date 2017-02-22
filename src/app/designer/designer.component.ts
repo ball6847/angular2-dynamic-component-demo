@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
   `],
   template: `
     <layout></layout>
+    <router-outlet></router-outlet>
   `
 })
 export class DesignerComponent { }

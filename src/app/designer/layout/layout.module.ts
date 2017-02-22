@@ -6,10 +6,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutRowComponent } from './layout-row/layout-row.component';
 import { LayoutColComponent } from './layout-col/layout-col.component';
 
+// service
+import { WidgetFactory } from './shared/widget.service';
+import { LayoutService } from './shared/layout.service';
+
 import {
   Hello1Component, Hello2Component, Hello3Component, Hello4Component,
-  UnknownComponent, WidgetFactory
-} from './layout-widget'
+  UnknownComponent
+} from './layout-widget/widget.component';
 
 // List of dynamic components
 const dynamicComponents = [

@@ -6,7 +6,7 @@ import {
   Hello3Component,
   Hello4Component,
   UnknownComponent
-} from './widget.component';
+} from '../layout-widget/widget.component';
 
 
 @Injectable()

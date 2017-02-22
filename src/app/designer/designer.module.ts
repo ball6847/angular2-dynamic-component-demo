@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { DesignerComponent } from './designer.component';
 
@@ -8,24 +8,22 @@ import { DesignerComponent } from './designer.component';
 import { LayoutModule } from './layout/layout.module';
 
 // Toolbox Components
-import { ToolboxRowComponent } from './toolbox/toolbox-row/toolbox-row.component';
+import { ToolboxModule } from './toolbox/toolbox.module';
 
-const appRoutes: Routes = [
-  { path: 'row-:row', component: ToolboxRowComponent },
-  // { path: '**', component: PageNotFoundComponent }
-];
 
 
 @NgModule({
   declarations: [
-    DesignerComponent,
-    ToolboxRowComponent
+    DesignerComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    LayoutModule
+    LayoutModule,
+    ToolboxModule,
+    RouterModule.forRoot([], { useHash: true })
   ],
-  bootstrap: [DesignerComponent]
+  bootstrap: [
+    DesignerComponent
+  ]
 })
 export class DesignerModule { }

@@ -3,8 +3,8 @@ import {
   ViewContainerRef, ComponentFactoryResolver, ComponentRef
 } from '@angular/core';
 
-import { WidgetFactory } from '../layout-widget';
-import { LayoutWidget } from '../layout.model';
+import { WidgetFactory } from '../shared/widget.service';
+import { LayoutWidget } from '../shared/layout.model';
 
 @Component({
   selector: 'layout-col',
