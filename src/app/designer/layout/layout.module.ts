@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Layout Components
-import { LayoutComponent } from './layout/layout.component';
+import { LayoutComponent } from './layout.component';
 import { LayoutRowComponent } from './layout-row/layout-row.component';
 import { LayoutColComponent } from './layout-col/layout-col.component';
 
@@ -35,7 +35,10 @@ const dynamicComponents = [
   entryComponents: [
     ...dynamicComponents
   ],
-  providers: [WidgetFactory],
+  providers: [
+    WidgetFactory,
+    LayoutService
+  ],
   exports: [
     LayoutComponent
   ],
