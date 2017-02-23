@@ -38,7 +38,7 @@ export class LayoutColComponent {
 
   toggle(widget) {
     this.layoutService.deactivateAllWidgets();
-    widget.active = !widget.active;
+    widget.active = true;
   }
 
   private render(widget) {
