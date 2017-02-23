@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { WidgetFactory } from '../../widget/shared/widget.service';
 import { LayoutWidget, LayoutColumn } from '../shared/layout.model';
+import { LayoutService } from '../shared/layout.service';
 
 @Component({
   selector: 'layout-col',
@@ -19,7 +20,11 @@ export class LayoutColComponent {
 
   private componentRef: ComponentRef<{}>;
 
-  constructor(private widgetFactory: WidgetFactory, private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(
+    private widgetFactory: WidgetFactory,
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private layoutService: LayoutService,
+  ) {
   }
 
   ngOnInit() {
@@ -29,6 +34,11 @@ export class LayoutColComponent {
   ngOnDestroy() {
     this.componentRef.destroy();
     this.componentRef = null;
+  }
+
+  toggle(widget) {
+    this.layoutService.deactivateAllWidgets();
+    widget.active = !widget.active;
   }
 
   private render(widget) {

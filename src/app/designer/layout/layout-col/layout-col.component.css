@@ -8,3 +8,6 @@
 .widget:hover {
   border: 2px dashed #0275d8;
 }
+.widget.active {
+  border: 2px dashed #c12e2a;
+}

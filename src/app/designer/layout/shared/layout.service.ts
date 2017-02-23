@@ -6,27 +6,28 @@ export class LayoutObservable extends ReplaySubject<LayoutRow[]> { }
 
 @Injectable()
 export class LayoutService {
-  private rows: LayoutRow[] = [
-    new LayoutRow([
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-    ]),
-    new LayoutRow([
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-      new LayoutColumn(new LayoutWidget('NullComponent', {})),
-    ]),
-  ];
-
-  // private observable: LayoutObservable;
+  private rows: LayoutRow[] = [];
 
   constructor() {
-    // this.observable = new LayoutObservable(1);
+    this.rows = [
+      new LayoutRow([
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      ]),
+      new LayoutRow([
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+        new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      ]),
+    ];
+  }
 
-    // this.observable.next(this.rows);
+
+  getLayout() {
+    return this.rows;
   }
 
   addRow() {
@@ -35,24 +36,21 @@ export class LayoutService {
     ]));
 
     return this.rows.length - 1;
-
-    // this.observable.next(this.rows);
   }
 
   getRow(index) {
     return this.rows[index];
   }
 
-  getLayout() {
-    return this.rows;
+  setActive(index) {
+
   }
 
-  setActive(index) {
+  deactivateAllWidgets() {
     this.rows.forEach(row => {
-      row.active = false;
+      row.columns.forEach(col => {
+        col.widget.active = false;
+      });
     });
-
-    const row = this.getRow(index);
-    row.active = true;
   }
 }

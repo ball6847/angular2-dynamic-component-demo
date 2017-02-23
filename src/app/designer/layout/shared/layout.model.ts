@@ -17,6 +17,7 @@ export class LayoutColumn {
 }
 
 export class LayoutWidget {
+  active: boolean = false;
   constructor(public component?: string, public options?: {}) {
   }
 }
