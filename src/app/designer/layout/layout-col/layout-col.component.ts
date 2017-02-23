@@ -39,6 +39,7 @@ export class LayoutColComponent {
   activate(widget) {
     this.layoutService.deactivateAllWidgets();
     widget.active = true;
+    this.layoutService.broadcastWorkspace();
   }
 
   private render(widget) {

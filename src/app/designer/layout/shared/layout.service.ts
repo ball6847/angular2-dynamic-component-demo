@@ -7,6 +7,7 @@ export class LayoutObservable extends ReplaySubject<LayoutRow[]> { }
 @Injectable()
 export class LayoutService {
   private rows: LayoutRow[] = [];
+  private workspace$: ReplaySubject<{}>;
 
   constructor() {
     this.rows = [
@@ -42,23 +43,33 @@ export class LayoutService {
     return this.rows[index];
   }
 
-  getActiveCoord() {
+  getWorkspace() {
+    this.workspace$ = new ReplaySubject(1);
+    this.broadcastWorkspace();
+    return this.workspace$;
+  }
+
+  broadcastWorkspace() {
     // @TODO apply interface
     const coord = {
       row: undefined,
-      col: undefined
+      col: undefined,
+      rowIndex: undefined,
+      colIndex: undefined
     };
 
-    this.rows.forEach(row => {
-      row.columns.forEach(col => {
+    this.rows.forEach((row, rowIndex) => {
+      row.columns.forEach((col, colIndex) => {
         if (col.widget.active) {
           coord.row = row;
           coord.col = col;
+          coord.rowIndex = rowIndex;
+          coord.colIndex = colIndex;
         }
       });
     });
 
-    return coord;
+    this.workspace$.next(coord);
   }
 
   setActive(index) {

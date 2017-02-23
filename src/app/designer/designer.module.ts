@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 import { DesignerComponent } from './designer.component';
 
 import { LayoutModule } from './layout/layout.module';
