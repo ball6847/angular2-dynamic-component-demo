@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ToolboxRowComponent } from './toolbox-row/toolbox-row.component';
-import { ToolboxRouting } from './toolbox.routing';
 
 
 @NgModule({
@@ -10,8 +9,7 @@ import { ToolboxRouting } from './toolbox.routing';
     ToolboxRowComponent
   ],
   imports: [
-    BrowserModule,
-    ToolboxRouting
+    BrowserModule
   ],
   providers: [],
 })

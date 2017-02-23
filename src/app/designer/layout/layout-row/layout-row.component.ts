@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../shared/layout.model'
+import { LayoutRow } from '../shared/layout.model'
 
 @Component({
   selector: 'layout-row',
@@ -8,5 +8,5 @@ import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../shared/layout.
 })
 export class LayoutRowComponent {
   @Input()
-  columns: LayoutColumn[] = [];
+  row: LayoutRow;
 }

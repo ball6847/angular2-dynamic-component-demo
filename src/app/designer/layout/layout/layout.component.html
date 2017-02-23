@@ -1,18 +1,12 @@
-<div
-  *ngFor="let row of layout; let i = index"
-  (click)="selectRow(i)"
-  [ngClass]="{
-    'container': row.hasContainer,
-    'container-fluid': !row.hasContainer
-  }">
-  <layout-row
-    class="row"
-    [columns]="row.columns"
-    [class.active]="row.active"
-    ></layout-row>
+<div *ngFor="let row of layout" [class.container]="row.hasContainer" [class.container-fluid]="!row.hasContainer">
+  <layout-row [row]="row"></layout-row>
 </div>
 <div class="container">
-  <div class="row" id="row-add-row">
-    <button (click)="addRow()" class="btn btn-primary" type="button">Add Row</button>
+  <div class="row">
+    <div class="col">
+      <a href="javascript:" id="row-add-row" (click)="addRow()">
+        <span class="btn btn-primary">Add Row</span>
+      </a>
+    </div>
   </div>
 </div>

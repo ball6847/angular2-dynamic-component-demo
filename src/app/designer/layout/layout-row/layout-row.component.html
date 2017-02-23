@@ -1,1 +1,3 @@
-<layout-col [ngClass]="column.classes" *ngFor="let column of columns" [widget]="column.widget"></layout-col>
+<div class="row" [class.active]="row.active">
+  <layout-col *ngFor="let column of row.columns" [column]="column" [ngClass]="column.classes" [widget]="column.widget"></layout-col>
+</div>

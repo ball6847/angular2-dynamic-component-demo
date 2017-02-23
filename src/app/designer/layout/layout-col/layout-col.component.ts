@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 
 import { WidgetFactory } from '../shared/widget.service';
-import { LayoutWidget } from '../shared/layout.model';
+import { LayoutWidget, LayoutColumn } from '../shared/layout.model';
 
 @Component({
   selector: 'layout-col',
@@ -13,6 +13,9 @@ import { LayoutWidget } from '../shared/layout.model';
 })
 export class LayoutColComponent implements OnInit, OnDestroy {
   @Input()
+  column: LayoutColumn;
+
+  @Input()
   widget: LayoutWidget;
 
   @ViewChild('container', { read: ViewContainerRef })
@@ -20,11 +23,11 @@ export class LayoutColComponent implements OnInit, OnDestroy {
 
   private componentRef: ComponentRef<{}>;
 
-  constructor(private wf: WidgetFactory, private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(private widgetFactory: WidgetFactory, private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
   ngOnInit() {
-    const component = this.wf.getComponent(this.widget.component);
+    const component = this.widgetFactory.getComponent(this.widget.component);
 
     // note: component must be declared within module.entryComponents
     const factory = this.componentFactoryResolver.resolveComponentFactory(component);
