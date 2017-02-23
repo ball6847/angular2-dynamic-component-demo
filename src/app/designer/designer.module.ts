@@ -4,10 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { DesignerComponent } from './designer.component';
 
-// Layout Components
 import { LayoutModule } from './layout/layout.module';
-
-// Toolbox Components
+import { WidgetModule } from './widget/widget.module';
 import { ToolboxModule } from './toolbox/toolbox.module';
 
 
@@ -20,6 +18,7 @@ import { ToolboxModule } from './toolbox/toolbox.module';
     BrowserModule,
     LayoutModule,
     ToolboxModule,
+    WidgetModule,
     RouterModule.forRoot([], { useHash: true })
   ],
   bootstrap: [

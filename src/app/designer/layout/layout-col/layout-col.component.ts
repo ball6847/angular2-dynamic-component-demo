@@ -1,9 +1,5 @@
-import {
-  Component, Input, OnInit, OnDestroy, ViewChild,
-  ViewContainerRef, ComponentFactoryResolver, ComponentRef
-} from '@angular/core';
-
-import { WidgetFactory } from '../shared/widget.service';
+import { Component, Input, ViewChild, ViewContainerRef, ComponentFactoryResolver, ComponentRef } from '@angular/core';
+import { WidgetFactory } from '../../widget/shared/widget.service';
 import { LayoutWidget, LayoutColumn } from '../shared/layout.model';
 
 @Component({
@@ -11,7 +7,7 @@ import { LayoutWidget, LayoutColumn } from '../shared/layout.model';
   styleUrls: ['./layout-col.component.css'],
   templateUrl: './layout-col.component.html'
 })
-export class LayoutColComponent implements OnInit, OnDestroy {
+export class LayoutColComponent {
   @Input()
   column: LayoutColumn;
 
@@ -27,7 +23,16 @@ export class LayoutColComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const component = this.widgetFactory.getComponent(this.widget.component);
+    this.render(this.widget);
+  }
+
+  ngOnDestroy() {
+    this.componentRef.destroy();
+    this.componentRef = null;
+  }
+
+  private render(widget) {
+    const component = this.widgetFactory.getComponent(widget.component);
 
     // note: component must be declared within module.entryComponents
     const factory = this.componentFactoryResolver.resolveComponentFactory(component);
@@ -35,11 +40,6 @@ export class LayoutColComponent implements OnInit, OnDestroy {
 
     // set component context
     const instance = <LayoutWidget>this.componentRef.instance;
-    instance.options = this.widget.options;
-  }
-
-  ngOnDestroy() {
-    this.componentRef.destroy();
-    this.componentRef = null;
+    instance.options = widget.options;
   }
 }
