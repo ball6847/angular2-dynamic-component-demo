@@ -8,16 +8,16 @@ export class LayoutObservable extends ReplaySubject<LayoutRow[]> { }
 export class LayoutService {
   private rows: LayoutRow[] = [
     new LayoutRow([
-      new LayoutColumn(new LayoutWidget('Hello1Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello2Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello3Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello4Component', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
     ]),
     new LayoutRow([
-      new LayoutColumn(new LayoutWidget('Hello1Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello2Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello3Component', {})),
-      new LayoutColumn(new LayoutWidget('Hello4Component', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
+      new LayoutColumn(new LayoutWidget('NullComponent', {})),
     ]),
   ];
 
@@ -31,7 +31,7 @@ export class LayoutService {
 
   addRow() {
     this.rows.push(new LayoutRow([
-      new LayoutColumn(new LayoutWidget('Hello1Component', {}))
+      new LayoutColumn(new LayoutWidget('NullComponent', {}))
     ]));
 
     return this.rows.length - 1;
