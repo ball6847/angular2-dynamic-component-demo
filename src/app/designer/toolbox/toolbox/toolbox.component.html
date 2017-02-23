@@ -14,7 +14,7 @@
       <div class="col">
         <h3>Col {{ colIndex+1 }} {{ classes }}</h3>
         <label class="col-form-label">Size:</label>
-        <ng-select [items]="sizes" (selected)="changeColumnSize($event)"></ng-select>
+        <ng-select [items]="sizes" (data)="refreshValue($event)" (selected)="changeColumnSize($event)"></ng-select>
       </div>
     </div>
   </div>

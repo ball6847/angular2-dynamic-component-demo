@@ -14,21 +14,23 @@ export class ToolboxComponent {
   rowIndex: number;
   colIndex: number;
 
-  public sizes: Array<string> = [
-    'col',
-    'col-1',
-    'col-2',
-    'col-3',
-    'col-4',
-    'col-5',
-    'col-6',
-    'col-7',
-    'col-8',
-    'col-9',
-    'col-10',
-    'col-11',
-    'col-12'
+  public sizes: Array<any> = [
+    { id: 'col', text: 'col' },
+    { id: 'col-1', text: 'col-1' },
+    { id: 'col-2', text: 'col-2' },
+    { id: 'col-3', text: 'col-3' },
+    { id: 'col-4', text: 'col-4' },
+    { id: 'col-5', text: 'col-5' },
+    { id: 'col-6', text: 'col-6' },
+    { id: 'col-7', text: 'col-7' },
+    { id: 'col-8', text: 'col-8' },
+    { id: 'col-9', text: 'col-9' },
+    { id: 'col-10', text: 'col-10' },
+    { id: 'col-11', text: 'col-11' },
+    { id: 'col-12', text: 'col-12' }
   ];
+
+  selected;
 
   classes: string = 'col';
 
@@ -38,6 +40,11 @@ export class ToolboxComponent {
   changeColumnSize(size) {
     console.log(size);
     // this.classes = this.col.classes[0] = size;
+  }
+
+  public refreshValue(value: any): void {
+    this.selected = value;
+    console.log(this.selected);
   }
 
   ngOnInit() {
