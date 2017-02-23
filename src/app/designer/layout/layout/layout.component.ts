@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from './shared/layout.model';
-import { LayoutService, LayoutObservable } from './shared/layout.service';
+import { Layout, LayoutRow, LayoutColumn, LayoutWidget } from '../shared/layout.model';
+import { LayoutService, LayoutObservable } from '../shared/layout.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

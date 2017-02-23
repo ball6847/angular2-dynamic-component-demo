@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 // Layout Components
-import { LayoutComponent } from './layout.component';
+import { LayoutComponent } from './layout/layout.component';
 import { LayoutRowComponent } from './layout-row/layout-row.component';
 import { LayoutColComponent } from './layout-col/layout-col.component';
 
