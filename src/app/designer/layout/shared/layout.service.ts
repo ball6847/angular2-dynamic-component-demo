@@ -42,6 +42,25 @@ export class LayoutService {
     return this.rows[index];
   }
 
+  getActiveCoord() {
+    // @TODO apply interface
+    const coord = {
+      row: undefined,
+      col: undefined
+    };
+
+    this.rows.forEach(row => {
+      row.columns.forEach(col => {
+        if (col.widget.active) {
+          coord.row = row;
+          coord.col = col;
+        }
+      });
+    });
+
+    return coord;
+  }
+
   setActive(index) {
 
   }
