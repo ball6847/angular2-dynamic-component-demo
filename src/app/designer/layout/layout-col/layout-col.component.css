@@ -1,5 +1,6 @@
 .widget {
   min-height: 90px;
+  min-width: 1em;
   background: rgba(0, 0, 0, 0.3);
   text-align: center;
   padding-top: 1em;

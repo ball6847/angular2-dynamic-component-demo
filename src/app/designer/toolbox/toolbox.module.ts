@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SelectModule } from 'ng2-select';
 import { ToolboxRowComponent } from './toolbox-row/toolbox-row.component';
 import { ToolboxComponent } from './toolbox/toolbox.component';
-
+import { SelectModule } from 'angular2-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,8 @@ import { ToolboxComponent } from './toolbox/toolbox.component';
   ],
   imports: [
     BrowserModule,
-    SelectModule
+    SelectModule,
+    FormsModule
   ],
   providers: [],
   exports: [

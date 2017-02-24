@@ -8,7 +8,6 @@ import { WidgetModule } from './widget/widget.module';
 import { ToolboxModule } from './toolbox/toolbox.module';
 
 
-
 @NgModule({
   declarations: [
     DesignerComponent
@@ -18,7 +17,7 @@ import { ToolboxModule } from './toolbox/toolbox.module';
     LayoutModule,
     ToolboxModule,
     WidgetModule,
-    RouterModule.forRoot([], { useHash: true })
+    RouterModule.forRoot([], { useHash: true }),
   ],
   bootstrap: [
     DesignerComponent
