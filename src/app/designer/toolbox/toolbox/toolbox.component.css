@@ -7,3 +7,6 @@
   background: #FFF;
   padding-top: 2em;
 }
+#toolbox .nav-tabs {
+    margin-bottom: 1em;
+}

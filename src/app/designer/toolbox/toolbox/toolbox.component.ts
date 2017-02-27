@@ -35,6 +35,10 @@ export class ToolboxComponent {
     ];
   }
 
+  selected(item) {
+    this.col.classes = [item.value];
+  }
+
   deselected() {
     // not allow empty list
     if (this.col.classes.length == 0) {

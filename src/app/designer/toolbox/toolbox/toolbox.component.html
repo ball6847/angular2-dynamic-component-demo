@@ -3,58 +3,40 @@
     <div class="row">
       <div class="col">
         <ngb-tabset>
-          <ngb-tab title="Simple">
+          <ngb-tab>
+            <template ngbTabTitle>Row #{{ rowIndex+1 }}</template>
             <template ngbTabContent>
-              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-              dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-              iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              <label class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input"
+                [checked]="row.hasContainer"
+                (change)="row.hasContainer = !row.hasContainer">
+                <span class="custom-control-indicator"></span>
+                <span class="custom-control-description">Row has container</span>
+              </label>
             </template>
           </ngb-tab>
           <ngb-tab>
-            <template ngbTabTitle><b>Fancy</b> title</template>
-            <template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
-              <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
-              craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
-              cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
-              yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
-              shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
-              sint qui sapiente accusamus tattooed echo park.</p>
+            <template ngbTabTitle>Column #{{ colIndex+1 }}</template>
+            <template ngbTabContent>
+              <label class="col-form-label">Size:</label>
+              <ng-select
+                (change)="log()"
+                [options]="sizes"
+                [multiple]="true"
+                [(ngModel)]="col.classes"
+                [ngStyle]="{'width': '300px'}"
+                (deselected)="deselected($event)"
+                (selected)="selected($event)">
+              </ng-select>
             </template>
           </ngb-tab>
-          <ngb-tab title="Disabled" [disabled]="true">
+          <ngb-tab>
+            <template ngbTabTitle>Library</template>
             <template ngbTabContent>
-              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-              dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-              iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              WIDGET
             </template>
           </ngb-tab>
         </ngb-tabset>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h3>Row {{ rowIndex+1 }}</h3>
-        <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input"
-          [checked]="row.hasContainer"
-          (change)="row.hasContainer = !row.hasContainer">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Row has container</span>
-        </label>
-      </div>
-      <div class="col">
-        <h3>Column {{ colIndex+1 }}</h3>
-        <label class="col-form-label">Size:</label>
-        <ng-select
-          (change)="log()"
-          [options]="sizes"
-          [multiple]="true"
-          [(ngModel)]="col.classes"
-          [ngStyle]="{'width': '300px'}"
-          (deselected)="deselected($event)">
-        </ng-select>
       </div>
     </div>
   </div>
