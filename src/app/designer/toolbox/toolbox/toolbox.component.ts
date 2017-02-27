@@ -46,6 +46,11 @@ export class ToolboxComponent {
     }
   }
 
+  removeColumn() {
+    this.row.removeColumn(this.colIndex);
+    this.col = null;
+  }
+
   ngOnInit() {
     this.layoutService.getWorkspace()
       .subscribe(coord => {

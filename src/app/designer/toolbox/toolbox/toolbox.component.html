@@ -28,6 +28,9 @@
                 (deselected)="deselected($event)"
                 (selected)="selected($event)">
               </ng-select>
+              <div class="removal-notice">
+                <button (click)="removeColumn()" class="btn btn-danger" type="button">Remove Column</button>
+              </div>
             </template>
           </ngb-tab>
           <ngb-tab>

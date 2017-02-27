@@ -8,5 +8,8 @@
   padding-top: 2em;
 }
 #toolbox .nav-tabs {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+}
+.removal-notice {
+  padding-top: 40px;
 }

@@ -13,6 +13,10 @@ export class LayoutRow {
       new LayoutColumn(new LayoutWidget('NullComponent', {}))
     );
   }
+
+  removeColumn(index) {
+    this.columns.splice(index, 1);
+  }
 }
 
 export class LayoutColumn {
