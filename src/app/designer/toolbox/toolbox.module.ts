@@ -5,6 +5,7 @@ import { ToolboxComponent } from './toolbox/toolbox.component';
 import { SelectModule } from 'angular2-select';
 import { FormsModule } from '@angular/forms';
 import { NgbModule, NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
+import { DragulaModule } from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgbModule, NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     SelectModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    DragulaModule
   ],
   providers: [
     NgbTabsetConfig

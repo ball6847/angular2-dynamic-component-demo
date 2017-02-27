@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragulaModule } from 'ng2-dragula';
 
 // Layout Components
 import { LayoutComponent } from './layout/layout.component';
@@ -19,7 +20,8 @@ import { LayoutService } from './shared/layout.service';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+    DragulaModule
   ],
   providers: [
     LayoutService
