@@ -10,5 +10,5 @@
   border: 2px dashed #0275d8;
 }
 .widget.active {
-  border: 2px dashed #c12e2a;
+  border: 2px solid #c12e2a;
 }
