@@ -1,5 +1,5 @@
 <div id="toolbox" *ngIf="row && col">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col">
         <ngb-tabset>
@@ -8,10 +8,10 @@
             <template ngbTabContent>
               <label class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input"
-                [checked]="row.hasContainer"
+                [checked]="!row.hasContainer"
                 (change)="row.hasContainer = !row.hasContainer">
                 <span class="custom-control-indicator"></span>
-                <span class="custom-control-description">Row has container</span>
+                <span class="custom-control-description">.container-fluid</span>
               </label>
             </template>
           </ngb-tab>
