@@ -10,7 +10,7 @@ export class LayoutRow {
 }
 
 export class LayoutColumn {
-  classes: string[] = ['col-12'];
+  classes: string[] = ['col-3'];
 
   constructor(public widget?: LayoutWidget) {
   }
