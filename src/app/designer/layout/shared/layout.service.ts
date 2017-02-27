@@ -43,6 +43,10 @@ export class LayoutService {
     return this.rows[index];
   }
 
+  removeRow(index) {
+    this.rows.splice(index, 1);
+  }
+
   getWorkspace() {
     this.workspace$ = new ReplaySubject(1);
     this.broadcastWorkspace();

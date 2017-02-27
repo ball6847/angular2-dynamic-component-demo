@@ -49,6 +49,13 @@ export class ToolboxComponent {
   removeColumn() {
     this.row.removeColumn(this.colIndex);
     this.col = null;
+
+    console.log(this.row.columns.length);
+
+    // remove column if container no columns anymore
+    if (this.row.columns.length == 0) {
+      this.layoutService.removeRow(this.rowIndex);
+    }
   }
 
   ngOnInit() {
