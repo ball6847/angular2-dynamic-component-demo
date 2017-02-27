@@ -9,4 +9,8 @@ import { LayoutRow } from '../shared/layout.model'
 export class LayoutRowComponent {
   @Input()
   row: LayoutRow;
+
+  newColumn() {
+    this.row.newColumn();
+  }
 }

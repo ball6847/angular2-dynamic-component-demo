@@ -1,3 +1,4 @@
 <div class="row" [class.active]="row.active">
   <layout-col *ngFor="let column of row.columns" [column]="column" [ngClass]="column.classes" [widget]="column.widget"></layout-col>
+  <a  (click)="newColumn()" href="javascript:" class="add-col-button">+</a>
 </div>

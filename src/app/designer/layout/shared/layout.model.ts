@@ -7,6 +7,12 @@ export class LayoutRow {
 
   constructor(public columns?: LayoutColumn[], public hasContainer: boolean = true) {
   }
+
+  newColumn() {
+    this.columns.push(
+      new LayoutColumn(new LayoutWidget('NullComponent', {}))
+    );
+  }
 }
 
 export class LayoutColumn {
