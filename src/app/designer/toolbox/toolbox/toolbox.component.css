@@ -3,16 +3,7 @@
   bottom: 0;
   width: 100%;
   min-height: 25em;
-  background: black;
-  color: white;
+  border-top: 4px solid #0275d8;
+  background: #FFF;
   padding-top: 2em;
-}
-select-dropdown > div .options ul li {
-  color: black;
-}
-ng-select > div > div.multiple {
-  background-color: #4c4c4c;
-}
-#toolbox ng-select > div {
-  border: 1px solid #828282;
 }

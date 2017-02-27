@@ -4,6 +4,7 @@ import { ToolboxRowComponent } from './toolbox-row/toolbox-row.component';
 import { ToolboxComponent } from './toolbox/toolbox.component';
 import { SelectModule } from 'angular2-select';
 import { FormsModule } from '@angular/forms';
+import { NgbModule, NgbTabsetConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     SelectModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    NgbTabsetConfig
+  ],
   exports: [
     ToolboxComponent
   ]

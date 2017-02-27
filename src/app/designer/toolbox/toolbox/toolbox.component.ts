@@ -38,7 +38,7 @@ export class ToolboxComponent {
   deselected() {
     // not allow empty list
     if (this.col.classes.length == 0) {
-      this.col.classes = ['col'];
+      this.col.classes = ['col-12'];
     }
   }
 
